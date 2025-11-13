@@ -1,0 +1,109 @@
+.beneficios-intro {
+    background: white;
+    padding: 80px 0 60px;
+    text-align: center;
+}
+
+.beneficios-intro h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.beneficios-intro p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.beneficios-content {
+    background: #2B4FD9;
+    padding: 60px 0;
+    color: white;
+}
+
+.beneficio-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.beneficio-section:last-of-type {
+    margin-bottom: 40px;
+}
+
+.beneficio-text {
+    flex: 1;
+}
+
+.beneficio-text h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.beneficio-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.beneficio-text ul li {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.beneficio-text ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.beneficio-image {
+    flex: 0 0 350px;
+}
+
+.beneficio-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15%;
+    aspect-ratio: 1/1;
+}
+
+.beneficios-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.beneficios-footer p {
+    font-size: 18px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .beneficio-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .beneficio-image {
+        flex: 0 0 auto;
+        max-width: 300px;
+    }
+
+    .beneficios-intro h1 {
+        font-size: 28px;
+    }
+
+    .beneficio-text h2 {
+        font-size: 26px;
+    }
+}

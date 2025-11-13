@@ -1,0 +1,567 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 20px 0;
+    border-bottom: 3px solid #2B4FD9;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img { 
+    height: 45px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #2B4FD9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    background: #6B8EFF;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-login:hover {
+    background: #5678E8;
+}
+
+/* Hero Section */
+.hero {
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hero-text p {
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.btn-primary {
+    background: #6B8EFF;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background: #5678E8;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Steps Section */
+.steps {
+    background: #00B9D4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    color: white;
+}
+
+.steps .container {
+    width: 100%;
+}
+
+.steps h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.step-card {
+    text-align: center;
+}
+
+.step-number {
+    background: white;
+    color: #00B9D4;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.step-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.about {
+    min-height: 100vh;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+}
+
+.about-box {
+    background: white;
+    padding: 50px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #000;
+    font-weight: bold;
+}
+
+.about-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-intro p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.mission-box,
+.vision-box {
+    margin-bottom: 30px;
+}
+
+.mission-box h3,
+.vision-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+.mission-box p,
+.vision-box p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.contact {
+    background: #E5E5E5;
+}
+
+.contact-info-section {
+    background: #FEF8ED;
+    padding: 60px 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+}
+
+.contact-column,
+.social-column {
+    flex: 0 0 auto;
+}
+.contact-column h3,
+.social-column h3 {
+    color: #2B4FD9;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.contact-item svg {
+    color: #2B4FD9;
+    flex-shrink: 0;
+}
+
+.contact-item a {
+    color: #2B4FD9;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.social-icons a {
+    color: #000;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #2B4FD9;
+}
+
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-blue-section {
+    background: #2B4FD9;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-links span {
+    margin: 0 5px;
+    color: white;
+}
+
+.footer-text {
+    margin: 15px 0 0;
+    font-size: 15px;
+    color: white;
+}
+
+.footer-gray-section {
+    background: #6B6B6B;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 3% auto;
+    padding: 0;
+    width: 85%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+.modal-header {
+    background: white;
+    border-bottom: 4px solid #2B4FD9;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.modal-nav a {
+    color: #2B4FD9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-container {
+    display: flex;
+    padding: 60px 40px;
+    gap: 60px;
+}
+
+.login-form {
+    flex: 1;
+}
+
+.login-form h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #f5f5f5;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #2B4FD9;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    padding: 10px 25px;
+    border-radius: 20px;
+    background: #6B8EFF;
+    color: white;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+    background: #2B4FD9;
+}
+
+.radio-separator {
+    color: #666;
+    font-size: 14px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: #6B8EFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    background: #2B4FD9;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #333;
+    text-decoration: underline;
+}
+
+.login-image {
+    flex: 0 0 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-icon svg {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    
+    .login-image {
+        flex: 0 0 auto;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-box {
+        padding: 40px 30px;
+        border-width: 5px;
+    }
+    
+    .contact-info-section {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 30px;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-links span {
+        display: none;
+    }
+}
