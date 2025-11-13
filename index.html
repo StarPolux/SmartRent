@@ -198,18 +198,117 @@
                 
                 <div class="login-image">
                     <div class="user-icon">
-                        <svg width="150" height="150" viewBox="0 0 200 200">
-                            <!-- Círculo punteado externo -->
-                            <circle cx="100" cy="100" r="90" fill="none" stroke="black" stroke-width="3" stroke-dasharray="8,8"/>
-                            <!-- Círculo sólido azul claro -->
-                            <circle cx="100" cy="100" r="70" fill="#A5D8FF"/>
-                            <!-- Ícono de usuario -->
-                            <circle cx="100" cy="85" r="25" fill="#2B4FD9"/>
-                            <path d="M 60 145 Q 100 115, 140 145" fill="#2B4FD9"/>
-                        </svg>
+                        <img src="img/login/image 8.jpg" alt="User Icon">
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content modal-register">
+            <span class="close-register">&times;</span>
+            
+            <div class="modal-header">
+                <div class="logo">
+                    <img src="img/logo.jpeg" alt="SmartRent Logo">
+                </div>
+                <nav class="modal-nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+
+            <div class="register-container">
+                <h1>¡Regístrate para comenzar!</h1>
+                
+                <form id="registerForm" class="register-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido:</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Edad:</label>
+                            <input type="number" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>DNI:</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Número de Teléfono:</label>
+                            <input type="tel" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ciudad:</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Domicilio:</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Contraseña:</label>
+                        <input type="password" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Seleccione:</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="userTypeRegister" value="arrendador" checked>
+                                <span class="radio-custom">Arrendador</span>
+                            </label>
+                            <span class="radio-separator">o</span>
+                            <label class="radio-label">
+                                <input type="radio" name="userTypeRegister" value="arrendatario">
+                                <span class="radio-custom">Arrendatario</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Crear Cuenta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="successLoginModal" class="modal-success">
+        <div class="success-box">
+            <h2>¡Inicio de sesión Exitosa!</h2>
+            <div class="success-icon">
+                <img src="img/login/image 56.jpg" alt="login exitoso">
+            </div>
+            <button class="btn-ok" onclick="closeSuccessLogin()">OK</button>
+        </div>
+    </div>
+    <div id="successRegisterModal" class="modal-success">
+        <div class="success-box">
+            <h2>¡Creación de Cuenta Exitosa!</h2>
+            <p class="welcome-text">¡Bienvenido(a)!</p>
+            <div class="success-icon">
+                <img src="img/login/image 58.jpg" alt="Registro exitoso">
+            </div>
+            <button class="btn-ok" onclick="closeSuccessRegister()">OK</button>
         </div>
     </div>
     <script src="js/index.js"></script>
