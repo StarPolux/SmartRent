@@ -114,6 +114,18 @@
     </div>
 
     <script src="../../js/dashboard.js"></script>
+    <script>
+        function cargarResenas() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || '1';
+            
+            document.getElementById('back-btn').onclick = function() {
+                window.location.href = `propiedad-detalle.html?id=${id}`;
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', cargarResenas);
+    </script>
 </body>
 </html>
 

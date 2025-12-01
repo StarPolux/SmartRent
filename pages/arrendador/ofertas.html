@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Ofertas Recibidas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="../../index.html">
+                    <img src="../../img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="inicio.html" class="nav-btn active">Mis propiedades</a>
+            <a href="premium.html" class="nav-btn">Premium</a>
+            <a href="notificaciones.html" class="nav-btn">Notificaciones</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="offers-header">
+            <h1 class="page-title">Ofertas Recibidas para: Propiedad 1</h1>
+            <a href="editar-propiedad.html" class="edit-icon">✏️</a>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filter-tabs">
+            <button class="filter-btn active">Todas</button>
+            <button class="filter-btn">Nuevas</button>
+            <button class="filter-btn">En Revisión</button>
+            <button class="filter-btn">Aceptadas</button>
+            <button class="filter-btn">Rechazadas</button>
+        </div>
+
+        <!-- Lista de ofertas -->
+        <div class="offers-list">
+            <!-- Oferta 1 -->
+            <div class="offer-card">
+                <div class="offer-avatar">
+                    <img src="../../img/usuarios/logo_usuario.png" alt="Pedro Ramirez">
+                </div>
+                <div class="offer-info">
+                    <h3 class="offer-name">Pedro Ramirez, 32, Ing.</h3>
+                    <p class="offer-detail"><span class="icon">💰</span> Oferta: $1,500/mes</p>
+                    <p class="offer-detail"><span class="icon">📅</span> Mudanza deseada: 26/01/2006</p>
+                    <p class="offer-detail"><span class="icon">👥</span> Grupo: Pareja con 1 hijo, sin mascotas</p>
+                    <p class="offer-detail"><span class="icon">⭐</span> Puntaje de Confianza: 8.5/10</p>
+                </div>
+                <div class="offer-actions">
+                    <button class="btn-offer-action">Ver Detalles</button>
+                    <button class="btn-offer-action">Contactar</button>
+                    <button class="btn-offer-accept">Aceptar</button>
+                    <button class="btn-offer-reject">Rechazar</button>
+                </div>
+            </div>
+
+            <!-- Oferta 2 -->
+            <div class="offer-card">
+                <div class="offer-avatar">
+                    <img src="../../img/usuarios/logo_usuario.png" alt="Juan Pérez">
+                </div>
+                <div class="offer-info">
+                    <h3 class="offer-name">Juan Pérez, 29, Cont.</h3>
+                    <p class="offer-detail"><span class="icon">💰</span> Oferta: $1,300/mes</p>
+                    <p class="offer-detail"><span class="icon">📅</span> Mudanza deseada: 02/01/2006</p>
+                    <p class="offer-detail"><span class="icon">👥</span> Grupo: Pareja sin hijos, con 2 mascotas</p>
+                    <p class="offer-detail"><span class="icon">⭐</span> Puntaje de Confianza: 7/10</p>
+                </div>
+                <div class="offer-actions">
+                    <button class="btn-offer-action">Ver Detalles</button>
+                    <button class="btn-offer-action">Contactar</button>
+                    <button class="btn-offer-accept">Aceptar</button>
+                    <button class="btn-offer-reject">Rechazar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/dashboard.js"></script>
+    <script>
+        // Filtros
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

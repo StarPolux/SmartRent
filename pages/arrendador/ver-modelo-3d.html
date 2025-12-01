@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Ver Modelo 3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="../../index.html">
+                    <img src="../../img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="inicio.html" class="nav-btn active">Mis propiedades</a>
+            <a href="premium.html" class="nav-btn">Premium</a>
+            <a href="notificaciones.html" class="nav-btn">Notificaciones</a>
+            <button class="nav-btn logout-btn" onclick="window.location.href='../shared/cerrar-sesion.html'">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="model3d-viewer">
+            <div class="viewer-header">
+                <h1 class="property-title" id="propertyTitle">Propiedad 1</h1>
+                <a href="editar-propiedad.html?id=1" class="edit-icon" id="editLink">✏️</a>
+            </div>
+
+            <div class="viewer-content">
+                <div class="model-display">
+                    <img src="../../img/propiedades/modelo_3d.png" alt="Modelo 3D" id="model3dImage">
+                </div>
+
+                <div class="model-controls">
+                    <div class="control-section">
+                        <h3>Capas Visibles</h3>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked> Estructura
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked> Instalaciones
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked> Limpieza
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked> Medidas
+                        </label>
+                    </div>
+
+                    <div class="control-section">
+                        <h3>Vista:</h3>
+                        <label class="radio-item">
+                            <input type="radio" name="view" checked> Perspectiva
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="view"> Planta
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="view"> Frontal
+                        </label>
+                    </div>
+
+                    <div class="view-buttons">
+                        <button class="view-btn-3d active"></button>
+                        <button class="view-btn-3d"></button>
+                        <button class="view-btn-3d"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="viewer-actions">
+                <a href="propiedad-detalle.html?id=1" class="btn-secondary" id="backLink">Volver al detalle</a>
+                <button class="btn-primary" onclick="descargarModelo()">Descargar Modelo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/dashboard.js"></script>
+    <script>
+        const propiedadesModelo = {
+            1: {
+                titulo: "Propiedad 1",
+                modelo: "../../img/propiedades/Prop_1.png"
+            },
+            2: {
+                titulo: "Propiedad 2",
+                modelo: "../../img/propiedades/propiedad2.PNG"
+            },
+            3: {
+                titulo: "Propiedad 3",
+                modelo: "../../img/propiedades/propiedad3.PNG"
+            }
+        };
+
+        function cargarModelo() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || '1';
+            const prop = propiedadesModelo[id] || propiedadesModelo[1];
+
+            document.getElementById('propertyTitle').textContent = prop.titulo;
+            document.getElementById('model3dImage').src = prop.modelo;
+            document.getElementById('editLink').href = `editar-propiedad.html?id=${id}`;
+            document.getElementById('backLink').href = `propiedad-detalle.html?id=${id}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', cargarModelo);
+
+        function descargarModelo() {
+            alert('Descargando modelo 3D...');
+        }
+    </script>
+</body>
+</html>

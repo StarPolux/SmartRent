@@ -29,16 +29,13 @@
 
     <div class="container">
         <div class="map-container">
-            <!-- Header -->
             <div class="map-header">
-                <h1>Los Olivos, Lima, Perú</h1>
+                <h1 id="mapTitle">Los Olivos, Lima, Perú</h1>
             </div>
 
-            <!-- Mapa (Imagen) -->
             <div class="map-wrapper">
-                <img src="../../img/mapas/mapa_prop1.png" alt="Mapa de Los Olivos" class="map-image" id="map-image">
+                <img src="../../img/mapas/mapa_prop1.png" alt="Mapa" class="map-image" id="map-image">
                 
-                <!-- Controles de zoom -->
                 <div class="map-controls">
                     <button class="control-btn" id="zoom-in">
                         <span>+</span>
@@ -54,7 +51,6 @@
                 </div>
             </div>
 
-            <!-- Botón Regresar -->
             <div class="map-footer">
                 <button class="btn-primary" id="back-btn">Regresar</button>
             </div>
@@ -62,6 +58,31 @@
     </div>
 
     <script src="../../js/dashboard.js"></script>
+    <script>
+        const ubicaciones = {
+            1: { titulo: "Los Olivos, Lima, Perú", mapa: "../../img/mapas/mapa_prop1.png" },
+            2: { titulo: "San Isidro, Lima, Perú", mapa: "../../img/mapas/mapa_prop2.png" },
+            3: { titulo: "Jesús María, Lima, Perú", mapa: "../../img/mapas/mapa_prop3.png" },
+            4: { titulo: "San Martín de Porres, Lima, Perú", mapa: "../../img/mapas/mapa_prop4.png" },
+            5: { titulo: "San Isidro Centro, Lima, Perú", mapa: "../../img/mapas/mapa_prop5.png" },
+            6: { titulo: "Miraflores, Lima, Perú", mapa: "../../img/mapas/mapa_prop6.png" }
+        };
+
+        function cargarMapa() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || '1';
+            const ubi = ubicaciones[id] || ubicaciones[1];
+
+            document.getElementById('mapTitle').textContent = ubi.titulo;
+            document.getElementById('map-image').src = ubi.mapa;
+            
+            document.getElementById('back-btn').onclick = function() {
+                window.location.href = `propiedad-detalle.html?id=${id}`;
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', cargarMapa);
+    </script>
 </body>
 </html>
 

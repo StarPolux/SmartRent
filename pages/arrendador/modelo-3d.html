@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Generar Modelo 3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="../../index.html">
+                    <img src="../../img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="inicio.html" class="nav-btn active">Mis propiedades</a>
+            <a href="premium.html" class="nav-btn">Premium</a>
+            <a href="notificaciones.html" class="nav-btn">Notificaciones</a>
+            <button class="nav-btn logout-btn" onclick="window.location.href='../shared/cerrar-sesion.html'">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="model3d-section">
+            <h1 class="page-title" id="pageTitle">Generar Modelo 3D:</h1>
+            
+            <p class="instruction-text">Ingrese fotos del inmueble:</p>
+
+            <div class="photo-upload-grid">
+                <div class="photo-slot" id="slot1">
+                    <img src="../../img/propiedades/Prop_1.png" alt="Foto 1" id="img1">
+                </div>
+                <div class="photo-slot" id="slot2">
+                    <img src="../../img/propiedades/Prop_1.2.png" alt="Foto 2" id="img2">
+                </div>
+                <div class="photo-slot add-more" id="addMore" onclick="agregarFoto()">
+                    <span>Ingresar más</span>
+                </div>
+            </div>
+
+            <button class="btn-generate" onclick="generarModelo()">
+                🔄 Generar Modelo 3D
+            </button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="analyzingModal" style="display: none;">
+        <div class="modal-container modal-loading">
+            <p class="modal-message">Analizando imágenes</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <button class="btn-modal-cancel" onclick="cancelarAnalisis()">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="successModal" style="display: none;">
+        <div class="modal-container modal-success">
+            <p class="modal-message">Se generó el modelo 3D</p>
+            <button class="btn-modal-accept" onclick="verModelo()">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="../../js/dashboard.js"></script>
+    <script>
+        const propiedadesImg = {
+            1: {
+                img1: "../../img/propiedades/Prop_1.png",
+                img2: "../../img/propiedades/Prop_1.2.png"
+            },
+            2: {
+                img1: "../../img/propiedades/propiedad2.PNG",
+                img2: "../../img/propiedades/propiedad2.PNG"
+            },
+            3: {
+                img1: "../../img/propiedades/propiedad3.PNG",
+                img2: "../../img/propiedades/propiedad3.PNG"
+            }
+        };
+
+        function cargarPropiedad() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || '1';
+            const prop = propiedadesImg[id] || propiedadesImg[1];
+
+            document.getElementById('img1').src = prop.img1;
+            document.getElementById('img2').src = prop.img2;
+            
+            window.currentPropertyId = id;
+        }
+
+        document.addEventListener('DOMContentLoaded', cargarPropiedad);
+
+        function agregarFoto() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const newSlot = document.createElement('div');
+                        newSlot.className = 'photo-slot';
+                        newSlot.innerHTML = '<img src="' + e.target.result + '" alt="Nueva foto">';
+                        document.getElementById('addMore').before(newSlot);
+                    }
+                    reader.readAsDataURL(file);
+                }
+            }
+            input.click();
+        }
+
+        function generarModelo() {
+            const modal = document.getElementById('analyzingModal');
+            const progressFill = document.getElementById('progressFill');
+            modal.style.display = 'flex';
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                progressFill.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    modal.style.display = 'none';
+                    document.getElementById('successModal').style.display = 'flex';
+                }
+            }, 300);
+        }
+
+        function cancelarAnalisis() {
+            document.getElementById('analyzingModal').style.display = 'none';
+        }
+
+        function verModelo() {
+            const id = window.currentPropertyId || '1';
+            window.location.href = 'ver-modelo-3d.html?id=' + id;
+        }
+    </script>
+</body>
+</html>

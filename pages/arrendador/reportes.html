@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Reportes de Riesgo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="../../index.html">
+                    <img src="../../img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="inicio.html" class="nav-btn active">Mis propiedades</a>
+            <a href="premium.html" class="nav-btn">Premium</a>
+            <a href="notificaciones.html" class="nav-btn">Notificaciones</a>
+            <button class="nav-btn logout-btn" onclick="window.location.href='../shared/cerrar-sesion.html'">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="reportes-section">
+            <h1 class="reportes-title">Generar Reporte de Riesgo:</h1>
+            
+            <div class="reportes-info">
+                <p><strong>Propiedad:</strong> Propiedad 1</p>
+                <p><strong>Arrendatario:</strong> Pedro Ramirez</p>
+                <p><strong>Fecha de contrato:</strong> 01/08/2025</p>
+            </div>
+
+            <p class="reportes-subtitle">Seleccione el tipo de análisis:</p>
+
+            <div class="reportes-options">
+                <label class="reporte-option">
+                    <input type="checkbox" name="tipoAnalisis" value="legal">
+                    <span class="option-icon legal">✏️</span>
+                    <span class="option-text">Legal</span>
+                </label>
+                <label class="reporte-option">
+                    <input type="checkbox" name="tipoAnalisis" value="financiero">
+                    <span class="option-icon financiero">⚙️</span>
+                    <span class="option-text">Financiero</span>
+                </label>
+                <label class="reporte-option">
+                    <input type="checkbox" name="tipoAnalisis" value="estructural">
+                    <span class="option-icon estructural">🔧</span>
+                    <span class="option-text">Estructural</span>
+                </label>
+                <label class="reporte-option">
+                    <input type="checkbox" name="tipoAnalisis" value="seguridad">
+                    <span class="option-icon seguridad">⚠️</span>
+                    <span class="option-text">Seguridad De La Zona</span>
+                </label>
+            </div>
+
+            <button class="btn-analizar" onclick="analizarRiesgos()">Analizar Riesgos</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="analyzingModal" style="display: none;">
+        <div class="modal-container modal-loading">
+            <p class="modal-message">Analizando posibles riesgos</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <button class="btn-modal-cancel" onclick="cancelarAnalisis()">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="successModal" style="display: none;">
+        <div class="modal-container modal-success">
+            <p class="modal-message">Se generó el reporte de riesgo</p>
+            <div class="modal-buttons">
+                <button class="btn-modal-yes" onclick="aceptarReporte()">Aceptar</button>
+                <button class="btn-modal-no" onclick="abrirReporte()">Abrir</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="errorModal" style="display: none;">
+        <div class="modal-container modal-error">
+            <p class="modal-message">No se pudo generar el reporte de riesgo ERROR 404</p>
+            <button class="btn-modal-accept" onclick="cerrarError()">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="../../js/dashboard.js"></script>
+    <script>
+        function analizarRiesgos() {
+            const checkboxes = document.querySelectorAll('input[name="tipoAnalisis"]:checked');
+            
+            if (checkboxes.length === 0) {
+                alert('Por favor seleccione al menos un tipo de análisis');
+                return;
+            }
+
+            const modal = document.getElementById('analyzingModal');
+            const progressFill = document.getElementById('progressFill');
+            modal.style.display = 'flex';
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                progressFill.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    modal.style.display = 'none';
+                    
+                    if (Math.random() > 0.2) {
+                        document.getElementById('successModal').style.display = 'flex';
+                    } else {
+                        document.getElementById('errorModal').style.display = 'flex';
+                    }
+                }
+            }, 100);
+        }
+
+        function cancelarAnalisis() {
+            document.getElementById('analyzingModal').style.display = 'none';
+        }
+
+        function aceptarReporte() {
+            document.getElementById('successModal').style.display = 'none';
+            window.location.href = 'propiedad-detalle.html';
+        }
+
+        function abrirReporte() {
+            document.getElementById('successModal').style.display = 'none';
+            alert('Abriendo reporte generado...');
+        }
+
+        function cerrarError() {
+            document.getElementById('errorModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,13 +1,3 @@
-/* ===================================
-   SmartRent - Dashboard JavaScript
-   JS unificado para páginas internas
-   =================================== */
-
-// ===================================
-// NAVEGACIÓN
-// ===================================
-
-// Funcionalidad para botones de navegación
 function initNavigation() {
     document.querySelectorAll('.nav-btn').forEach(btn => {
         btn.addEventListener('click', function() {
@@ -20,7 +10,6 @@ function initNavigation() {
     });
 }
 
-// Marcar la página actual en la navegación
 function setActiveNavItem() {
     const currentPath = window.location.pathname;
     document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -31,27 +20,17 @@ function setActiveNavItem() {
     });
 }
 
-// ===================================
-// PROPIEDADES
-// ===================================
-
-// Funcionalidad para botones "Ver más"
 function initPropertyButtons() {
     document.querySelectorAll('.view-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const card = this.closest('.property-card, .featured-card');
             const propertyName = card?.querySelector('.property-name')?.textContent;
             if (propertyName) {
-                // Redirigir a la página de detalles
-                window.location.href = `/pages/arrendatario/propiedad-detalle.html?nombre=${encodeURIComponent(propertyName)}`;
+                window.location.href = `propiedad-detalle.html?nombre=${encodeURIComponent(propertyName)}`;
             }
         });
     });
 }
-
-// ===================================
-// NOTIFICACIONES
-// ===================================
 
 function initNotifications() {
     const closeBtn = document.querySelector('.close-btn');
@@ -104,10 +83,6 @@ function initNotifications() {
 
     updateNotificationCount();
 }
-
-// ===================================
-// MAPA
-// ===================================
 
 function initMap() {
     const backBtn = document.getElementById('back-btn');
@@ -164,10 +139,6 @@ function initMap() {
     }
 }
 
-// ===================================
-// CHAT
-// ===================================
-
 function initChat() {
     const backBtn = document.getElementById('back-btn');
     
@@ -177,10 +148,6 @@ function initChat() {
         });
     }
 }
-
-// ===================================
-// UPLOAD / SUBIR ARCHIVO
-// ===================================
 
 function initUpload() {
     const exploreBtn = document.getElementById('explore-btn');
@@ -227,10 +194,6 @@ function initUpload() {
     }
 }
 
-// ===================================
-// RESEÑAS
-// ===================================
-
 function initReviews() {
     const sortSelect = document.getElementById('sort-select');
     const closeBtn = document.querySelector('.close-btn');
@@ -267,38 +230,27 @@ function initReviews() {
     }
 }
 
-// ===================================
-// CUENTA / PERFIL
-// ===================================
-
 function initProfile() {
-    const editBtn = document.querySelector('.edit-btn');
+    const editBtn = document.querySelector('.profile-edit-btn');
     const changePhotoLink = document.querySelector('.change-photo');
 
     if (editBtn) {
         editBtn.addEventListener('click', () => {
-            window.location.href = '/pages/arrendatario/editar-cuenta.html';
+            window.location.href = 'editar-cuenta.html';
         });
     }
 
     if (changePhotoLink) {
         changePhotoLink.addEventListener('click', (e) => {
             e.preventDefault();
-            window.location.href = '/pages/shared/subir-foto.html';
+            window.location.href = '../shared/subir-foto.html';
         });
     }
 }
 
-// ===================================
-// INICIALIZACIÓN GENERAL
-// ===================================
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar navegación
     initNavigation();
     setActiveNavItem();
-
-    // Inicializar componentes según la página
     initPropertyButtons();
     initNotifications();
     initMap();

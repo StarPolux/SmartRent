@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="../../index.html">
+                    <img src="../../img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="inicio.html" class="nav-btn">Mis propiedades</a>
+            <a href="premium.html" class="nav-btn active">Premium</a>
+            <a href="notificaciones.html" class="nav-btn">Notificaciones</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="premium-grid">
+            <div class="premium-card">
+                <h2 class="plan-name">Basico</h2>
+                <p class="plan-price-big">Gratis</p>
+                <p class="plan-subtitle">Para siempre</p>
+                <ul class="plan-features">
+                    <li>✓ 1 verificación al mes</li>
+                    <li>✓ Reportes completos con IA</li>
+                    <li>✓ Modelos 3D interactivos</li>
+                    <li>✓ Alertas inteligentes en tiempo real</li>
+                    <li>✓ Soporte prioritario 24/7</li>
+                </ul>
+                <button class="btn-plan-current" disabled>Plan Actual</button>
+            </div>
+
+            <div class="premium-card featured">
+                <div class="popular-badge">Más Popular</div>
+                <h2 class="plan-name">Premium</h2>
+                <p class="plan-price-big">$29</p>
+                <ul class="plan-features">
+                    <li>✓ Verificaciones ilimitadas</li>
+                    <li>✓ Reportes completos con IA</li>
+                    <li>✓ Modelos 3D interactivos</li>
+                    <li>✓ Alertas inteligentes en tiempo real</li>
+                    <li>✓ Soporte prioritario 24/7</li>
+                </ul>
+                <button class="btn-plan-filled" onclick="showPremiumModal()">Empezar Ahora</button>
+            </div>
+
+            <div class="premium-card">
+                <h2 class="plan-name">Enterprise</h2>
+                <p class="plan-price-big">Custom</p>
+                <p class="plan-subtitle">Contactar Ventas</p>
+                <ul class="plan-features">
+                    <li>✓ Todo Premium</li>
+                    <li>✓ API personalizada</li>
+                    <li>✓ Integraciones a medida</li>
+                    <li>✓ Gestor de cuenta dedicado</li>
+                    <li>✓ SLA garantizado</li>
+                </ul>
+                <button class="btn-plan-outline" onclick="showCustomModal()">Empezar Ahora</button>
+            </div>
+        </div>
+
+        <div class="back-button-container">
+            <a href="inicio.html" class="btn-back-premium">Regresar</a>
+        </div>
+    </div>
+
+    <div id="premiumModal" class="modal-overlay" style="display: none;">
+        <div class="modal-premium-box">
+            <h1 class="modal-premium-title">Bienvenido al Plan Premium!</h1>
+            <p class="modal-premium-desc">"La forma más completa y avanzada de verificar, visualizar y proteger tus alquileres."</p>
+            <div class="modal-premium-icon">
+                <img src="../../img/iconos/premium.png" alt="Premium Icon">
+            </div>
+            <button class="btn-modal-ok" onclick="closePremiumModal()">OK</button>
+        </div>
+    </div>
+
+    <div id="customModal" class="modal-overlay" style="display: none;">
+        <div class="modal-premium-box">
+            <h1 class="modal-premium-title">Bienvenido al Plan Custom!</h1>
+            <p class="modal-premium-desc">"Una solución hecha a medida para empresas que necesitan control total y soporte dedicado."</p>
+            <div class="modal-premium-icon">
+               <img src="../../img/iconos/logo_check.png" alt="">
+            </div>
+            <button class="btn-modal-ok" onclick="closeCustomModal()">OK</button>
+        </div>
+    </div>
+
+    <script src="../../js/dashboard.js"></script>
+    <script>
+        function showPremiumModal() {
+            document.getElementById('premiumModal').style.display = 'flex';
+        }
+
+        function closePremiumModal() {
+            document.getElementById('premiumModal').style.display = 'none';
+        }
+
+        function showCustomModal() {
+            document.getElementById('customModal').style.display = 'flex';
+        }
+
+        function closeCustomModal() {
+            document.getElementById('customModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

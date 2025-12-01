@@ -4,10 +4,18 @@ var registerModal = document.getElementById("registerModal");
 var successLoginModal = document.getElementById("successLoginModal");
 var successRegisterModal = document.getElementById("successRegisterModal");
 var btnLogin = document.querySelector(".btn-login");
+var btnPrimary = document.querySelector(".btn-primary");
 var closeLogin = document.querySelector(".close");
 var closeRegister = document.querySelector(".close-register");
+
 btnLogin.onclick = function() {
     loginModal.style.display = "block";
+}
+
+if (btnPrimary) {
+    btnPrimary.onclick = function() {
+        loginModal.style.display = "block";
+    }
 }
 
 closeLogin.onclick = function() {
@@ -38,23 +46,23 @@ document.getElementById("registerForm").onsubmit = function(e) {
 
 function closeSuccessLogin() {
     successLoginModal.style.display = "none";
-    // Obtener el tipo de usuario seleccionado
     var userType = document.querySelector('input[name="userType"]:checked');
+    var basePath = window.location.pathname.includes('/templates/') ? '../' : '';
     if (userType && userType.value === "arrendador") {
-        window.location.href = "pages/arrendador/inicio.html";
+        window.location.href = basePath + "pages/arrendador/inicio.html";
     } else {
-        window.location.href = "pages/arrendatario/inicio.html";
+        window.location.href = basePath + "pages/arrendatario/inicio.html";
     }
 }
 
 function closeSuccessRegister() {
     successRegisterModal.style.display = "none";
-    // Redirigir según el tipo de usuario registrado
-    var userType = document.querySelector('#registerForm input[name="userType"]:checked');
+    var userType = document.querySelector('#registerForm input[name="userTypeRegister"]:checked');
+    var basePath = window.location.pathname.includes('/templates/') ? '../' : '';
     if (userType && userType.value === "arrendador") {
-        window.location.href = "pages/arrendador/inicio.html";
+        window.location.href = basePath + "pages/arrendador/inicio.html";
     } else {
-        window.location.href = "pages/arrendatario/inicio.html";
+        window.location.href = basePath + "pages/arrendatario/inicio.html";
     }
 }
 

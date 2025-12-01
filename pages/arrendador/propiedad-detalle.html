@@ -17,176 +17,183 @@
             </div>
         </div>
         <nav class="nav">
-            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendador</span>
-            <a href="inicio.html" class="nav-btn">Inicio</a>
+            <a href="inicio.html" class="nav-btn active">Mis propiedades</a>
+            <a href="premium.html" class="nav-btn">Premium</a>
             <a href="notificaciones.html" class="nav-btn">Notificaciones</a>
-            <a href="cuenta.html" class="nav-btn">Cuenta</a>
-            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+            <button class="nav-btn logout-btn" onclick="window.location.href='../shared/cerrar-sesion.html'">Cerrar Sesión</button>
         </nav>
     </header>
 
     <div class="blue-bar"></div>
 
     <div class="container">
-        <!-- Encabezado de propiedad -->
-        <div class="property-header">
-            <a href="inicio.html" class="back-btn">←</a>
-            <h1 class="property-title">Propiedad 1 - Los Olivos</h1>
+        <div class="detail-header">
+            <h1 class="detail-title" id="propertyTitle">Propiedad 1</h1>
+            <a href="editar-propiedad.html?id=1" class="edit-icon-btn" id="editBtn">✏️</a>
         </div>
 
-        <!-- Galería de imágenes -->
-        <div class="gallery-section">
-            <div class="main-image">
-                <img src="../../img/propiedades/Prop_1.png" alt="Propiedad Principal" id="mainImage">
+        <div class="gallery-frame24">
+            <div class="gallery-main-img">
+                <img src="../../img/propiedades/Prop_1.png" alt="Vista Principal" id="mainImage">
             </div>
-            <div class="thumbnail-grid">
-                <img src="../../img/propiedades/Prop_1.png" alt="Vista 1" class="thumbnail active" onclick="changeMainImage(this)">
-                <img src="../../img/propiedades/Prop_1.2.png" alt="Vista 2" class="thumbnail" onclick="changeMainImage(this)">
-                <img src="../../img/propiedades/Prop_1.3.png" alt="Vista 3" class="thumbnail" onclick="changeMainImage(this)">
-                <img src="../../img/propiedades/Prop_1.4.png" alt="Vista 4" class="thumbnail" onclick="changeMainImage(this)">
-            </div>
-        </div>
-
-        <!-- Información de la propiedad -->
-        <div class="property-details-grid">
-            <div class="detail-section">
-                <h2 class="section-title">Información General</h2>
-                <div class="detail-item">
-                    <span class="detail-label">Ubicación:</span>
-                    <span class="detail-value">Av. Los Olivos 456, Lima</span>
+            <div class="gallery-grid-small" id="galleryGrid">
+                <div class="gallery-small-item">
+                    <img src="../../img/propiedades/Prop_1.2.png" alt="Vista 2" id="img2">
                 </div>
-                <div class="detail-item">
-                    <span class="detail-label">Área:</span>
-                    <span class="detail-value">120 m²</span>
+                <div class="gallery-small-item">
+                    <img src="../../img/propiedades/Prop_1.3.png" alt="Vista 3" id="img3">
                 </div>
-                <div class="detail-item">
-                    <span class="detail-label">Habitaciones:</span>
-                    <span class="detail-value">3</span>
+                <div class="gallery-small-item">
+                    <img src="../../img/propiedades/Prop_1.4.png" alt="Vista 4" id="img4">
                 </div>
-                <div class="detail-item">
-                    <span class="detail-label">Baños:</span>
-                    <span class="detail-value">2</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Estacionamiento:</span>
-                    <span class="detail-value">1</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Estado:</span>
-                    <span class="detail-value" style="color: #00CED1; font-weight: 600;">Alquilada</span>
-                </div>
-            </div>
-
-            <div class="detail-section">
-                <h2 class="section-title">Precio</h2>
-                <p class="price-large">S/. 4500 <span>/mes</span></p>
-                <p class="detail-note">Incluye mantenimiento de áreas comunes</p>
-            </div>
-        </div>
-
-        <!-- Información del Inquilino Actual -->
-        <div class="tenant-section">
-            <h2 class="section-title">Inquilino Actual</h2>
-            <div class="tenant-card">
-                <div class="tenant-avatar">
-                    <img src="../../img/usuarios/usuario_foto.png" alt="Inquilino">
-                </div>
-                <div class="tenant-info">
-                    <h3>María García López</h3>
-                    <p><strong>DNI:</strong> 76543210</p>
-                    <p><strong>Teléfono:</strong> +51 987 654 321</p>
-                    <p><strong>Email:</strong> maria.garcia@email.com</p>
-                    <p><strong>Contrato:</strong> 01/01/2025 - 31/12/2025</p>
-                </div>
-                <div class="tenant-actions">
-                    <a href="chat.html" class="btn-secondary">Contactar</a>
-                    <a href="contrato.html" class="btn-outline">Ver Contrato</a>
+                <div class="gallery-small-item gallery-more-box" onclick="verGaleria()">
+                    <span>20 fotos más</span>
                 </div>
             </div>
         </div>
 
-        <!-- Historial de Pagos -->
-        <div class="payments-section">
-            <h2 class="section-title">Historial de Pagos</h2>
-            <table class="payments-table">
-                <thead>
-                    <tr>
-                        <th>Mes</th>
-                        <th>Monto</th>
-                        <th>Fecha de Pago</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Noviembre 2025</td>
-                        <td>S/. 4500</td>
-                        <td>01/11/2025</td>
-                        <td><span class="status-paid">Pagado</span></td>
-                    </tr>
-                    <tr>
-                        <td>Octubre 2025</td>
-                        <td>S/. 4500</td>
-                        <td>01/10/2025</td>
-                        <td><span class="status-paid">Pagado</span></td>
-                    </tr>
-                    <tr>
-                        <td>Septiembre 2025</td>
-                        <td>S/. 4500</td>
-                        <td>03/09/2025</td>
-                        <td><span class="status-paid">Pagado</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Mapa de ubicación -->
-        <div class="map-section">
-            <h2 class="section-title">Ubicación</h2>
-            <div class="map-container">
-                <img src="../../img/mapas/mapa_prop1.png" alt="Mapa de ubicación" class="map-image">
+        <div class="detail-info">
+            <div class="detail-info-left">
+                <h2 class="detail-subtitle" id="propertyName">Casa de alquiler en Monterrico</h2>
+                <p class="detail-location" id="propertyLocation">Av. Monterrico Sur - Surco</p>
             </div>
-            <a href="mapa.html" class="btn-outline mt-10">Ver mapa completo</a>
-        </div>
-
-        <!-- Acciones -->
-        <div class="action-section">
-            <a href="editar-propiedad.html?id=1" class="btn-primary">Editar Propiedad</a>
-            <button class="btn-danger" onclick="confirmarEliminar()">Eliminar Propiedad</button>
-        </div>
-    </div>
-
-    <!-- Modal de confirmación -->
-    <div class="modal-overlay" id="deleteModal" style="display: none;">
-        <div class="modal-container">
-            <h2 class="modal-title">¿Eliminar propiedad?</h2>
-            <p>Esta acción no se puede deshacer. ¿Estás seguro de que deseas eliminar esta propiedad?</p>
-            <div class="modal-actions">
-                <button class="btn-outline" onclick="cerrarModal()">Cancelar</button>
-                <button class="btn-danger" onclick="eliminarPropiedad()">Eliminar</button>
+            <div class="detail-info-right">
+                <div class="detail-features">
+                    <div class="detail-feature">
+                        <svg class="detail-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+                        <span id="habs">4 habs.</span>
+                    </div>
+                    <div class="detail-feature">
+                        <svg class="detail-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22V12a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 22h20"/><path d="M12 2v4"/><path d="M8 6h8"/></svg>
+                        <span id="banos">3 baños</span>
+                    </div>
+                    <div class="detail-feature">
+                        <svg class="detail-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/></svg>
+                        <span id="metros">300 m²</span>
+                    </div>
+                    <div class="detail-feature">
+                        <svg class="detail-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span id="terreno">390 m² terreno</span>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <p class="detail-description" id="propertyDesc">
+            Descubre esta fantástica casa pareada, recientemente reformada y prácticamente a estrenar, ubicada en una de las calles más céntricas de Monterrico. Su situación es inmejorable: en pleno corazón del municipio, pero con la tranquilidad.
+        </p>
+
+        <div class="detail-actions-text">
+            <a href="editar-propiedad.html?id=1" class="action-text-link editar" id="linkEditar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Editar
+            </a>
+            <a href="modelo-3d.html?id=1" class="action-text-link modelo" id="linkModelo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                Modelo 3D
+            </a>
+            <a href="ofertas.html?id=1" class="action-text-link ofertas" id="linkOfertas">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                    <line x1="7" y1="7" x2="7.01" y2="7"/>
+                </svg>
+                Ofertas
+            </a>
+            <a href="reportes.html?id=1" class="action-text-link reportes" id="linkReportes">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                Reportes de riesgo
+            </a>
         </div>
     </div>
 
     <script src="../../js/dashboard.js"></script>
     <script>
-        function changeMainImage(thumbnail) {
-            document.getElementById('mainImage').src = thumbnail.src;
-            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-            thumbnail.classList.add('active');
+        const propiedades = {
+            1: {
+                titulo: "Propiedad 1",
+                nombre: "Casa de alquiler en Monterrico",
+                ubicacion: "Av. Monterrico Sur - Surco",
+                habs: "4 habs.",
+                banos: "3 baños",
+                metros: "300 m²",
+                terreno: "390 m² terreno",
+                descripcion: "Descubre esta fantástica casa pareada, recientemente reformada y prácticamente a estrenar, ubicada en una de las calles más céntricas de Monterrico. Su situación es inmejorable: en pleno corazón del municipio, pero con la tranquilidad.",
+                imgPrincipal: "../../img/propiedades/Prop_1.png",
+                img2: "../../img/propiedades/Prop_1.2.png",
+                img3: "../../img/propiedades/Prop_1.3.png",
+                img4: "../../img/propiedades/Prop_1.4.png"
+            },
+            2: {
+                titulo: "Propiedad 2",
+                nombre: "Cabaña de alquiler en Ausangate",
+                ubicacion: "Nevado Auzangate",
+                habs: "3 habs.",
+                banos: "2 baños",
+                metros: "150 m²",
+                terreno: "300 m² terreno",
+                descripcion: "Descubre esta fantástica cabaña diseñada para estar en un entorno natural único. Rodeada de montañas nevadas y paisajes impresionantes, esta propiedad ofrece la combinación perfecta de comodidad y aventura en los Andes peruanos.",
+                imgPrincipal: "../../img/propiedades/propiedad2.PNG",
+                img2: "../../img/propiedades/propiedad2.PNG",
+                img3: "../../img/propiedades/propiedad2.PNG",
+                img4: "../../img/propiedades/propiedad2.PNG"
+            },
+            3: {
+                titulo: "Propiedad 3",
+                nombre: "Bungalow de alquiler en Vichayito",
+                ubicacion: "Aranwa - Vichayito",
+                habs: "5 habs.",
+                banos: "4 baños",
+                metros: "330 m²",
+                terreno: "450 m² terreno",
+                descripcion: "Situado justo frente a la playa de Vichayito, este Bungalow ofrece una experiencia única de descanso frente al mar. Disfruta de vistas espectaculares, brisa marina y acceso directo a una de las playas más hermosas del norte peruano.",
+                imgPrincipal: "../../img/propiedades/propiedad3.PNG",
+                img2: "../../img/propiedades/propiedad3.PNG",
+                img3: "../../img/propiedades/propiedad3.PNG",
+                img4: "../../img/propiedades/propiedad3.PNG"
+            }
+        };
+
+        function cargarPropiedad() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || '1';
+            const prop = propiedades[id] || propiedades[1];
+
+            document.getElementById('propertyTitle').textContent = prop.titulo;
+            document.getElementById('propertyName').textContent = prop.nombre;
+            document.getElementById('propertyLocation').textContent = prop.ubicacion;
+            document.getElementById('habs').textContent = prop.habs;
+            document.getElementById('banos').textContent = prop.banos;
+            document.getElementById('metros').textContent = prop.metros;
+            document.getElementById('terreno').textContent = prop.terreno;
+            document.getElementById('propertyDesc').textContent = prop.descripcion;
+            
+            document.getElementById('mainImage').src = prop.imgPrincipal;
+            document.getElementById('img2').src = prop.img2;
+            document.getElementById('img3').src = prop.img3;
+            document.getElementById('img4').src = prop.img4;
+
+            document.getElementById('editBtn').href = `editar-propiedad.html?id=${id}`;
+            document.getElementById('linkEditar').href = `editar-propiedad.html?id=${id}`;
+            document.getElementById('linkModelo').href = `modelo-3d.html?id=${id}`;
+            document.getElementById('linkOfertas').href = `ofertas.html?id=${id}`;
+            document.getElementById('linkReportes').href = `reportes.html?id=${id}`;
         }
 
-        function confirmarEliminar() {
-            document.getElementById('deleteModal').style.display = 'flex';
-        }
+        document.addEventListener('DOMContentLoaded', cargarPropiedad);
 
-        function cerrarModal() {
-            document.getElementById('deleteModal').style.display = 'none';
-        }
-
-        function eliminarPropiedad() {
-            alert('Propiedad eliminada');
-            window.location.href = '/pages/arrendador/inicio.html';
+        function verGaleria() {
+            alert('Ver galería completa');
         }
     </script>
 </body>

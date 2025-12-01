@@ -29,39 +29,117 @@
 
     <div class="container">
         <div class="property-header">
-            <h1 class="property-title">Propiedad 1:</h1>
-            <div class="property-rating">⭐ 3.5 estrellas</div>
+            <h1 class="property-title" id="propertyTitle">Propiedad 1:</h1>
+            <div class="property-rating" id="propertyRating">⭐ 3.5 estrellas</div>
         </div>
 
-        <div class="gallery">
+        <div class="gallery" id="gallery">
             <div class="gallery-item">
-                <img src="../../img/propiedades/Prop_1.png" alt="Vista 1">
+                <img src="../../img/propiedades/Prop_1.png" alt="Vista 1" id="img1">
             </div>
             <div class="gallery-item">
-                <img src="../../img/propiedades/Prop_1.2.png" alt="Vista 2">
+                <img src="../../img/propiedades/Prop_1.2.png" alt="Vista 2" id="img2">
             </div>
             <div class="gallery-item">
-                <img src="../../img/propiedades/Prop_1.3.png" alt="Vista 3">
+                <img src="../../img/propiedades/Prop_1.3.png" alt="Vista 3" id="img3">
             </div>
             <div class="gallery-item">
-                <img src="../../img/propiedades/Prop_1.4.png" alt="Vista 4">
+                <img src="../../img/propiedades/Prop_1.4.png" alt="Vista 4" id="img4">
             </div>
         </div>
 
-        <p class="property-description">
+        <p class="property-description" id="propertyDesc">
             Este inmueble está ubicado en Los Olivos, incluye los servicios de luz, agua, internet y mantenimiento básico.
             Cuenta con 3 habitaciones, 2 baños, sala-comedor amplio y cocina equipada. Ideal para familias.
         </p>
 
         <div class="action-buttons">
-            <a href="propietario.html" class="action-btn">Ver dueño de propiedad</a>
-            <a href="mapa.html" class="action-btn">Ver ubicación</a>
-            <a href="resenas.html" class="action-btn">Ver reseñas</a>
-            <a href="alquilar.html" class="action-btn">Alquilar</a>
+            <a href="resenas.html?id=1" class="action-btn" id="linkResenas">Ver reseñas</a>
+            <a href="propietario.html?id=1" class="action-btn" id="linkPropietario">Ver dueño de propiedad</a>
+            <a href="mapa.html?id=1" class="action-btn" id="linkMapa">Ver ubicación</a>
         </div>
     </div>
 
     <script src="../../js/dashboard.js"></script>
+    <script>
+        const propiedades = {
+            1: {
+                titulo: "Propiedad 1:",
+                rating: "⭐ 3.5 estrellas",
+                descripcion: "Este inmueble está ubicado en Los Olivos, incluye los servicios de luz, agua, internet y mantenimiento básico. Cuenta con 3 habitaciones, 2 baños, sala-comedor amplio y cocina equipada. Ideal para familias.",
+                img1: "../../img/propiedades/Logo_LosOlivos.png",
+                img2: "../../img/propiedades/Logo_LosOlivos.png",
+                img3: "../../img/propiedades/Logo_LosOlivos.png",
+                img4: "../../img/propiedades/Logo_LosOlivos.png"
+            },
+            2: {
+                titulo: "Propiedad 2:",
+                rating: "⭐ 4.2 estrellas",
+                descripcion: "Moderno departamento en San Isidro, zona financiera. Incluye servicios de luz, agua, internet de alta velocidad y seguridad 24/7. Cuenta con 2 habitaciones, 1 baño completo, sala-comedor y cocina americana. Perfecto para profesionales.",
+                img1: "../../img/propiedades/Logo_SanIsidro2.png",
+                img2: "../../img/propiedades/Logo_SanIsidro2.png",
+                img3: "../../img/propiedades/Logo_SanIsidro2.png",
+                img4: "../../img/propiedades/Logo_SanIsidro2.png"
+            },
+            3: {
+                titulo: "Propiedad 3:",
+                rating: "⭐ 4.0 estrellas",
+                descripcion: "Acogedor departamento en Jesús María, cerca de Campo de Marte. Incluye servicios básicos y áreas comunes. Cuenta con 2 habitaciones, 2 baños, sala amplia y cocina equipada. Excelente ubicación con acceso a transporte público.",
+                img1: "../../img/propiedades/Logo_JesusMaria.png",
+                img2: "../../img/propiedades/Logo_JesusMaria.png",
+                img3: "../../img/propiedades/Logo_JesusMaria.png",
+                img4: "../../img/propiedades/Logo_JesusMaria.png"
+            },
+            4: {
+                titulo: "Propiedad 4:",
+                rating: "⭐ 3.8 estrellas",
+                descripcion: "Espacioso departamento en San Martín de Porres, zona residencial tranquila. Incluye servicios de luz, agua y cable. Cuenta con 3 habitaciones, 1 baño, sala-comedor y cocina independiente. Ideal para familias con presupuesto moderado.",
+                img1: "../../img/propiedades/Logo_smp.png",
+                img2: "../../img/propiedades/Logo_smp.png",
+                img3: "../../img/propiedades/Logo_smp.png",
+                img4: "../../img/propiedades/Logo_smp.png"
+            },
+            5: {
+                titulo: "Propiedad 5:",
+                rating: "⭐ 4.5 estrellas",
+                descripcion: "Lujoso departamento en el corazón de San Isidro. Incluye todos los servicios premium, gimnasio y piscina. Cuenta con 3 habitaciones, 2 baños completos, sala de estar amplia y cocina de diseño. Para ejecutivos exigentes.",
+                img1: "../../img/propiedades/Logo_Sanisidro.png",
+                img2: "../../img/propiedades/Logo_Sanisidro.png",
+                img3: "../../img/propiedades/Logo_Sanisidro.png",
+                img4: "../../img/propiedades/Logo_Sanisidro.png"
+            },
+            6: {
+                titulo: "Propiedad 6:",
+                rating: "⭐ 4.7 estrellas",
+                descripcion: "Exclusivo penthouse en Miraflores con vista al mar. Incluye todos los servicios, terraza privada y estacionamiento doble. Cuenta con 4 habitaciones, 3 baños, sala-comedor de lujo y cocina gourmet. La mejor opción premium.",
+                img1: "../../img/propiedades/propiedad6.PNG",
+                img2: "../../img/propiedades/propiedad6.PNG",
+                img3: "../../img/propiedades/propiedad6.PNG",
+                img4: "../../img/propiedades/propiedad6.PNG"
+            }
+        };
+
+        function cargarPropiedad() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || '1';
+            const prop = propiedades[id] || propiedades[1];
+
+            document.getElementById('propertyTitle').textContent = prop.titulo;
+            document.getElementById('propertyRating').textContent = prop.rating;
+            document.getElementById('propertyDesc').textContent = prop.descripcion;
+            
+            document.getElementById('img1').src = prop.img1;
+            document.getElementById('img2').src = prop.img2;
+            document.getElementById('img3').src = prop.img3;
+            document.getElementById('img4').src = prop.img4;
+
+            document.getElementById('linkResenas').href = `resenas.html?id=${id}`;
+            document.getElementById('linkPropietario').href = `propietario.html?id=${id}`;
+            document.getElementById('linkMapa').href = `mapa.html?id=${id}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', cargarPropiedad);
+    </script>
 </body>
 </html>
 

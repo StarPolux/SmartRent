@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Agregar Propiedad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="../../index.html">
+                    <img src="../../img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="inicio.html" class="nav-btn active">Mis propiedades</a>
+            <a href="premium.html" class="nav-btn">Premium</a>
+            <a href="notificaciones.html" class="nav-btn">Notificaciones</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <h1 class="page-title">Agregar Nueva Propiedad</h1>
+        
+        <form id="addPropertyForm" class="property-form">
+            <div class="form-grid">
+                <!-- Columna izquierda -->
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Nombre de la propiedad:</label>
+                        <input type="text" id="propertyName" placeholder="Ej: Mi Casa en Surco">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descripción:</label>
+                        <textarea id="description" rows="4" placeholder="Describe las características de tu propiedad..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" id="address" placeholder="Av. Principal 123">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Código Postal:</label>
+                        <input type="text" id="postalCode" placeholder="15000">
+                    </div>
+                </div>
+
+                <!-- Columna derecha -->
+                <div class="form-column">
+                    <div class="form-group">
+                        <label>Tipo de Propiedad:</label>
+                        <select id="propertyType">
+                            <option value="">Seleccionar...</option>
+                            <option value="casa">Casa</option>
+                            <option value="departamento">Departamento</option>
+                            <option value="oficina">Oficina</option>
+                            <option value="local">Local Comercial</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Precio de Renta (S/.):</label>
+                        <input type="number" id="rentPrice" placeholder="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ciudad:</label>
+                        <input type="text" id="city" placeholder="Lima">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>Habitaciones:</label>
+                            <input type="number" id="bedrooms" placeholder="0">
+                        </div>
+                        <div class="form-group half">
+                            <label>Baños:</label>
+                            <input type="number" id="bathrooms" placeholder="0">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>Área (m²):</label>
+                            <input type="number" id="area" placeholder="0">
+                        </div>
+                        <div class="form-group half">
+                            <label>Estacionamientos:</label>
+                            <input type="number" id="parking" placeholder="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subir fotos -->
+            <div class="upload-section">
+                <h3>Fotos de la Propiedad</h3>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-placeholder">
+                        <span class="upload-icon">📷</span>
+                        <p>Arrastra tus fotos aquí o haz clic para seleccionar</p>
+                    </div>
+                    <input type="file" id="photoInput" multiple accept="image/*" style="display: none;">
+                </div>
+                <div class="photo-preview" id="photoPreview"></div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Guardar Propiedad</button>
+                <a href="inicio.html" class="btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal de éxito -->
+    <div class="modal-overlay" id="successModal" style="display: none;">
+        <div class="modal-container">
+            <h2 class="modal-title">¡Propiedad agregada con éxito!</h2>
+            <div class="icon-container">
+                <img src="../../img/iconos/logo_check.png" alt="Éxito">
+            </div>
+            <button class="ok-btn" onclick="window.location.href='inicio.html'">OK</button>
+        </div>
+    </div>
+
+    <script src="../../js/dashboard.js"></script>
+    <script>
+        // Upload area click
+        document.getElementById('uploadArea').addEventListener('click', function() {
+            document.getElementById('photoInput').click();
+        });
+
+        // Photo preview
+        document.getElementById('photoInput').addEventListener('change', function(e) {
+            const preview = document.getElementById('photoPreview');
+            preview.innerHTML = '';
+            
+            Array.from(e.target.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'preview-thumb';
+                    preview.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+
+        // Form submit
+        document.getElementById('addPropertyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('successModal').style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
