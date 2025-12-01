@@ -41,9 +41,9 @@ function closeSuccessLogin() {
     // Obtener el tipo de usuario seleccionado
     var userType = document.querySelector('input[name="userType"]:checked');
     if (userType && userType.value === "arrendador") {
-        window.location.href = "/pages/arrendador/inicio.html";
+        window.location.href = "pages/arrendador/inicio.html";
     } else {
-        window.location.href = "/pages/arrendatario/inicio.html";
+        window.location.href = "pages/arrendatario/inicio.html";
     }
 }
 
@@ -52,9 +52,9 @@ function closeSuccessRegister() {
     // Redirigir según el tipo de usuario registrado
     var userType = document.querySelector('#registerForm input[name="userType"]:checked');
     if (userType && userType.value === "arrendador") {
-        window.location.href = "/pages/arrendador/inicio.html";
+        window.location.href = "pages/arrendador/inicio.html";
     } else {
-        window.location.href = "/pages/arrendatario/inicio.html";
+        window.location.href = "pages/arrendatario/inicio.html";
     }
 }
 

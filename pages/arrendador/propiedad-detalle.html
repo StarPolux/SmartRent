@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartRent - Detalle de Propiedad</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
 </head>
 <body>
     <header class="header">
         <div class="logo">
             <div class="logo-icon">
-                <a href="/index.html">
-                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                <a href="../../index.html">
+                    <img src="../../img/logo_smartrent.jpg" alt="SmartRent">
                 </a>
             </div>
         </div>
         <nav class="nav">
             <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendador</span>
-            <a href="/pages/arrendador/inicio.html" class="nav-btn">Inicio</a>
-            <a href="/pages/arrendador/notificaciones.html" class="nav-btn">Notificaciones</a>
-            <a href="/pages/arrendador/cuenta.html" class="nav-btn">Cuenta</a>
+            <a href="inicio.html" class="nav-btn">Inicio</a>
+            <a href="notificaciones.html" class="nav-btn">Notificaciones</a>
+            <a href="cuenta.html" class="nav-btn">Cuenta</a>
             <button class="nav-btn logout-btn">Cerrar Sesión</button>
         </nav>
     </header>
@@ -30,20 +30,20 @@
     <div class="container">
         <!-- Encabezado de propiedad -->
         <div class="property-header">
-            <a href="/pages/arrendador/inicio.html" class="back-btn">←</a>
+            <a href="inicio.html" class="back-btn">←</a>
             <h1 class="property-title">Propiedad 1 - Los Olivos</h1>
         </div>
 
         <!-- Galería de imágenes -->
         <div class="gallery-section">
             <div class="main-image">
-                <img src="/img/propiedades/Prop_1.png" alt="Propiedad Principal" id="mainImage">
+                <img src="../../img/propiedades/Prop_1.png" alt="Propiedad Principal" id="mainImage">
             </div>
             <div class="thumbnail-grid">
-                <img src="/img/propiedades/Prop_1.png" alt="Vista 1" class="thumbnail active" onclick="changeMainImage(this)">
-                <img src="/img/propiedades/Prop_1.2.png" alt="Vista 2" class="thumbnail" onclick="changeMainImage(this)">
-                <img src="/img/propiedades/Prop_1.3.png" alt="Vista 3" class="thumbnail" onclick="changeMainImage(this)">
-                <img src="/img/propiedades/Prop_1.4.png" alt="Vista 4" class="thumbnail" onclick="changeMainImage(this)">
+                <img src="../../img/propiedades/Prop_1.png" alt="Vista 1" class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="../../img/propiedades/Prop_1.2.png" alt="Vista 2" class="thumbnail" onclick="changeMainImage(this)">
+                <img src="../../img/propiedades/Prop_1.3.png" alt="Vista 3" class="thumbnail" onclick="changeMainImage(this)">
+                <img src="../../img/propiedades/Prop_1.4.png" alt="Vista 4" class="thumbnail" onclick="changeMainImage(this)">
             </div>
         </div>
 
@@ -89,7 +89,7 @@
             <h2 class="section-title">Inquilino Actual</h2>
             <div class="tenant-card">
                 <div class="tenant-avatar">
-                    <img src="/img/usuarios/usuario_foto.png" alt="Inquilino">
+                    <img src="../../img/usuarios/usuario_foto.png" alt="Inquilino">
                 </div>
                 <div class="tenant-info">
                     <h3>María García López</h3>
@@ -99,8 +99,8 @@
                     <p><strong>Contrato:</strong> 01/01/2025 - 31/12/2025</p>
                 </div>
                 <div class="tenant-actions">
-                    <a href="/pages/arrendador/chat.html" class="btn-secondary">Contactar</a>
-                    <a href="/pages/arrendador/contrato.html" class="btn-outline">Ver Contrato</a>
+                    <a href="chat.html" class="btn-secondary">Contactar</a>
+                    <a href="contrato.html" class="btn-outline">Ver Contrato</a>
                 </div>
             </div>
         </div>
@@ -144,14 +144,14 @@
         <div class="map-section">
             <h2 class="section-title">Ubicación</h2>
             <div class="map-container">
-                <img src="/img/mapas/mapa_prop1.png" alt="Mapa de ubicación" class="map-image">
+                <img src="../../img/mapas/mapa_prop1.png" alt="Mapa de ubicación" class="map-image">
             </div>
-            <a href="/pages/arrendador/mapa.html" class="btn-outline mt-10">Ver mapa completo</a>
+            <a href="mapa.html" class="btn-outline mt-10">Ver mapa completo</a>
         </div>
 
         <!-- Acciones -->
         <div class="action-section">
-            <a href="/pages/arrendador/editar-propiedad.html?id=1" class="btn-primary">Editar Propiedad</a>
+            <a href="editar-propiedad.html?id=1" class="btn-primary">Editar Propiedad</a>
             <button class="btn-danger" onclick="confirmarEliminar()">Eliminar Propiedad</button>
         </div>
     </div>
@@ -168,7 +168,7 @@
         </div>
     </div>
 
-    <script src="/js/dashboard.js"></script>
+    <script src="../../js/dashboard.js"></script>
     <script>
         function changeMainImage(thumbnail) {
             document.getElementById('mainImage').src = thumbnail.src;
@@ -191,3 +191,4 @@
     </script>
 </body>
 </html>
+

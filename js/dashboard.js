@@ -13,7 +13,7 @@ function initNavigation() {
         btn.addEventListener('click', function() {
             if (this.classList.contains('logout-btn')) {
                 if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
-                    window.location.href = '/pages/shared/cerrar-sesion.html';
+                    window.location.href = '../shared/cerrar-sesion.html';
                 }
             }
         });
