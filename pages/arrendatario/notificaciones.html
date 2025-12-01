@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Notificaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendatario</span>
+            <a href="/pages/arrendatario/inicio.html" class="nav-btn">Inicio</a>
+            <a href="/pages/arrendatario/notificaciones.html" class="nav-btn active">Notificaciones</a>
+            <a href="/pages/arrendatario/cuenta.html" class="nav-btn">Cuenta</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="notifications-container">
+            <div class="notifications-header">
+                <div>
+                    <h1 class="notifications-title">Notificaciones</h1>
+                    <p class="notification-count">Cantidad: <span id="notification-count">4</span></p>
+                </div>
+                <div class="close-btn">
+                    <img src="/img/iconos/Logo_Salir.png" alt="Cerrar">
+                </div>
+            </div>
+
+            <!-- Lista de notificaciones -->
+            <div class="notifications-list" id="notifications-list">
+                
+                <div class="notification-item">
+                    <h3 class="notification-title">Contrato Próximo a Vencer</h3>
+                    <p class="notification-description">Tu contrato digital está por vencer. Revisa las condiciones de renovación.</p>
+                    <span class="notification-date">02 de junio del 2025</span>
+                </div>
+
+                <div class="notification-item">
+                    <h3 class="notification-title">Tienes un mensaje de Alberto Domínguez</h3>
+                    <p class="notification-description">¿Cuándo renovamos el contrato?</p>
+                    <span class="notification-date">01 de junio del 2025</span>
+                </div>
+
+                <div class="notification-item">
+                    <h3 class="notification-title">Compara Zonas Similares</h3>
+                    <p class="notification-description">Consulta el comparativo de seguridad entre zonas para elegir la mejor opción.</p>
+                    <span class="notification-date">25 de mayo del 2025</span>
+                </div>
+
+                <div class="notification-item">
+                    <h3 class="notification-title">Aviso de mantenimiento</h3>
+                    <p class="notification-description">Hacemos de su conocimiento que el día 23 de mayo del 2025 estaremos realizando mantenimiento en el sistema.</p>
+                    <span class="notification-date">20 de mayo del 2025</span>
+                </div>
+
+            </div>
+
+            <!-- Estado vacío -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <h2>¡Sin ninguna notificación!</h2>
+                <img src="/img/iconos/Logo_basura.png" alt="Sin notificaciones">
+            </div>
+
+            <!-- Botón Vaciar -->
+            <div class="text-center mt-20">
+                <button class="btn-secondary" id="empty-btn">Vaciar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

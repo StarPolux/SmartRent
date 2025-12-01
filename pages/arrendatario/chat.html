@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendatario</span>
+            <a href="/pages/arrendatario/inicio.html" class="nav-btn">Inicio</a>
+            <a href="/pages/arrendatario/notificaciones.html" class="nav-btn">Notificaciones</a>
+            <a href="/pages/arrendatario/cuenta.html" class="nav-btn">Cuenta</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="chat-container">
+            <!-- Header -->
+            <div class="chat-header">
+                <h1>Alberto Domínguez</h1>
+            </div>
+
+            <!-- Área de mensajes -->
+            <div class="chat-messages" id="chat-messages">
+                
+                <!-- Mensaje del usuario (Yo) -->
+                <div class="message user-message">
+                    <div class="message-label">Yo</div>
+                    <div class="message-bubble">
+                        Hola, quería hablar contigo sobre el alquiler.
+                    </div>
+                </div>
+
+                <!-- Mensaje del propietario -->
+                <div class="message owner-message">
+                    <div class="message-bubble">
+                        Claro, dime. ¿En qué te puedo ayudar?
+                    </div>
+                    <div class="message-label">Propietario</div>
+                </div>
+
+                <!-- Mensaje del usuario (Yo) -->
+                <div class="message user-message">
+                    <div class="message-label">Yo</div>
+                    <div class="message-bubble">
+                        El contrato vence a fin de mes.
+                    </div>
+                </div>
+
+                <!-- Mensaje del propietario -->
+                <div class="message owner-message">
+                    <div class="message-bubble">
+                        Perfecto, ¿cuándo renovamos el contrato?
+                    </div>
+                    <div class="message-label">Propietario</div>
+                </div>
+
+            </div>
+
+            <!-- Botón Regresar -->
+            <div class="chat-footer">
+                <button class="btn-primary" id="back-btn">Regresar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

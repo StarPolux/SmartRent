@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Cuenta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendatario</span>
+            <a href="/pages/arrendatario/inicio.html" class="nav-btn">Inicio</a>
+            <a href="/pages/arrendatario/notificaciones.html" class="nav-btn">Notificaciones</a>
+            <a href="/pages/arrendatario/cuenta.html" class="nav-btn active">Cuenta</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="role">
+            <strong>ROL:</strong> Arrendatario
+        </div>
+
+        <h1 class="page-title">Cuenta</h1>
+
+        <div class="content-layout">
+            <div class="content-main">
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                            <input type="text" value="Pedro" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido:</label>
+                            <input type="text" value="Ramirez" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Edad:</label>
+                            <input type="text" value="48 años" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>DNI:</label>
+                            <input type="text" value="45678912" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Número de teléfono:</label>
+                            <input type="text" value="+51 987654321" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Correo:</label>
+                            <input type="email" value="pedro.ramirez@email.com" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Domicilio:</label>
+                        <input type="text" value="Av. Los Jardines 123, Los Olivos, Lima" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-sidebar">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="/img/usuarios/logo_usuario.png" alt="Foto de perfil">
+                    </div>
+                    <a href="/pages/shared/subir-foto.html" class="change-photo">Cambiar foto</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-20">
+            <a href="/pages/arrendatario/editar-cuenta.html" class="btn-primary">Editar</a>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

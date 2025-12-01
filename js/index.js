@@ -38,10 +38,24 @@ document.getElementById("registerForm").onsubmit = function(e) {
 
 function closeSuccessLogin() {
     successLoginModal.style.display = "none";
+    // Obtener el tipo de usuario seleccionado
+    var userType = document.querySelector('input[name="userType"]:checked');
+    if (userType && userType.value === "arrendador") {
+        window.location.href = "/pages/arrendador/inicio.html";
+    } else {
+        window.location.href = "/pages/arrendatario/inicio.html";
+    }
 }
 
 function closeSuccessRegister() {
     successRegisterModal.style.display = "none";
+    // Redirigir según el tipo de usuario registrado
+    var userType = document.querySelector('#registerForm input[name="userType"]:checked');
+    if (userType && userType.value === "arrendador") {
+        window.location.href = "/pages/arrendador/inicio.html";
+    } else {
+        window.location.href = "/pages/arrendatario/inicio.html";
+    }
 }
 
 window.onclick = function(event) {

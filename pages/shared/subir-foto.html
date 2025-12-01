@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Subir Foto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="javascript:history.back()" class="nav-btn">Regresar</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container flex-center" style="min-height: 60vh;">
+        <div class="upload-container">
+            <!-- Título -->
+            <h1 class="upload-title">Seleccione la foto desde su navegador...</h1>
+
+            <!-- Botón Explorar -->
+            <button class="btn-primary" id="explore-btn">Explorar</button>
+            <input type="file" id="file-input" accept="image/*" style="display: none;">
+
+            <!-- Área de preview -->
+            <div class="preview-area" id="preview-area">
+                <div class="preview-placeholder" id="preview-placeholder">
+                    <img src="/img/iconos/logo_imagen.png" alt="Seleccionar imagen" style="width: 60px; opacity: 0.5;">
+                </div>
+                <img id="preview-image" class="preview-image" style="display: none;" alt="Preview">
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="action-buttons" style="justify-content: center;">
+                <button class="btn-primary" id="save-btn">Guardar</button>
+                <button class="btn-secondary" id="cancel-btn">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

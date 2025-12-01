@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Detalle de Propiedad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendador</span>
+            <a href="/pages/arrendador/inicio.html" class="nav-btn">Inicio</a>
+            <a href="/pages/arrendador/notificaciones.html" class="nav-btn">Notificaciones</a>
+            <a href="/pages/arrendador/cuenta.html" class="nav-btn">Cuenta</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <!-- Encabezado de propiedad -->
+        <div class="property-header">
+            <a href="/pages/arrendador/inicio.html" class="back-btn">←</a>
+            <h1 class="property-title">Propiedad 1 - Los Olivos</h1>
+        </div>
+
+        <!-- Galería de imágenes -->
+        <div class="gallery-section">
+            <div class="main-image">
+                <img src="/img/propiedades/Prop_1.png" alt="Propiedad Principal" id="mainImage">
+            </div>
+            <div class="thumbnail-grid">
+                <img src="/img/propiedades/Prop_1.png" alt="Vista 1" class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="/img/propiedades/Prop_1.2.png" alt="Vista 2" class="thumbnail" onclick="changeMainImage(this)">
+                <img src="/img/propiedades/Prop_1.3.png" alt="Vista 3" class="thumbnail" onclick="changeMainImage(this)">
+                <img src="/img/propiedades/Prop_1.4.png" alt="Vista 4" class="thumbnail" onclick="changeMainImage(this)">
+            </div>
+        </div>
+
+        <!-- Información de la propiedad -->
+        <div class="property-details-grid">
+            <div class="detail-section">
+                <h2 class="section-title">Información General</h2>
+                <div class="detail-item">
+                    <span class="detail-label">Ubicación:</span>
+                    <span class="detail-value">Av. Los Olivos 456, Lima</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Área:</span>
+                    <span class="detail-value">120 m²</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Habitaciones:</span>
+                    <span class="detail-value">3</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Baños:</span>
+                    <span class="detail-value">2</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Estacionamiento:</span>
+                    <span class="detail-value">1</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Estado:</span>
+                    <span class="detail-value" style="color: #00CED1; font-weight: 600;">Alquilada</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2 class="section-title">Precio</h2>
+                <p class="price-large">S/. 4500 <span>/mes</span></p>
+                <p class="detail-note">Incluye mantenimiento de áreas comunes</p>
+            </div>
+        </div>
+
+        <!-- Información del Inquilino Actual -->
+        <div class="tenant-section">
+            <h2 class="section-title">Inquilino Actual</h2>
+            <div class="tenant-card">
+                <div class="tenant-avatar">
+                    <img src="/img/usuarios/usuario_foto.png" alt="Inquilino">
+                </div>
+                <div class="tenant-info">
+                    <h3>María García López</h3>
+                    <p><strong>DNI:</strong> 76543210</p>
+                    <p><strong>Teléfono:</strong> +51 987 654 321</p>
+                    <p><strong>Email:</strong> maria.garcia@email.com</p>
+                    <p><strong>Contrato:</strong> 01/01/2025 - 31/12/2025</p>
+                </div>
+                <div class="tenant-actions">
+                    <a href="/pages/arrendador/chat.html" class="btn-secondary">Contactar</a>
+                    <a href="/pages/arrendador/contrato.html" class="btn-outline">Ver Contrato</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historial de Pagos -->
+        <div class="payments-section">
+            <h2 class="section-title">Historial de Pagos</h2>
+            <table class="payments-table">
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Monto</th>
+                        <th>Fecha de Pago</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Noviembre 2025</td>
+                        <td>S/. 4500</td>
+                        <td>01/11/2025</td>
+                        <td><span class="status-paid">Pagado</span></td>
+                    </tr>
+                    <tr>
+                        <td>Octubre 2025</td>
+                        <td>S/. 4500</td>
+                        <td>01/10/2025</td>
+                        <td><span class="status-paid">Pagado</span></td>
+                    </tr>
+                    <tr>
+                        <td>Septiembre 2025</td>
+                        <td>S/. 4500</td>
+                        <td>03/09/2025</td>
+                        <td><span class="status-paid">Pagado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Mapa de ubicación -->
+        <div class="map-section">
+            <h2 class="section-title">Ubicación</h2>
+            <div class="map-container">
+                <img src="/img/mapas/mapa_prop1.png" alt="Mapa de ubicación" class="map-image">
+            </div>
+            <a href="/pages/arrendador/mapa.html" class="btn-outline mt-10">Ver mapa completo</a>
+        </div>
+
+        <!-- Acciones -->
+        <div class="action-section">
+            <a href="/pages/arrendador/editar-propiedad.html?id=1" class="btn-primary">Editar Propiedad</a>
+            <button class="btn-danger" onclick="confirmarEliminar()">Eliminar Propiedad</button>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div class="modal-overlay" id="deleteModal" style="display: none;">
+        <div class="modal-container">
+            <h2 class="modal-title">¿Eliminar propiedad?</h2>
+            <p>Esta acción no se puede deshacer. ¿Estás seguro de que deseas eliminar esta propiedad?</p>
+            <div class="modal-actions">
+                <button class="btn-outline" onclick="cerrarModal()">Cancelar</button>
+                <button class="btn-danger" onclick="eliminarPropiedad()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+    <script>
+        function changeMainImage(thumbnail) {
+            document.getElementById('mainImage').src = thumbnail.src;
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+
+        function confirmarEliminar() {
+            document.getElementById('deleteModal').style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        function eliminarPropiedad() {
+            alert('Propiedad eliminada');
+            window.location.href = '/pages/arrendador/inicio.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Inicio Arrendatario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendatario</span>
+            <a href="/pages/arrendatario/inicio.html" class="nav-btn active">Inicio</a>
+            <a href="/pages/arrendatario/notificaciones.html" class="nav-btn">Notificaciones</a>
+            <a href="/pages/arrendatario/cuenta.html" class="nav-btn">Cuenta</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <h1 class="welcome-text">Bienvenido Pedro Ramirez (arrendatario)</h1>
+
+        <section>
+            <h2 class="section-title">Propiedades Recomendadas para ti</h2>
+            <div class="properties-grid">
+                <!-- Propiedad 1 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="/img/propiedades/Logo_LosOlivos.png" alt="Los Olivos">
+                        <div class="property-label">Propiedad 1</div>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-name">Los Olivos</h3>
+                        <p class="property-price">S/. 4500 <span>/mes</span></p>
+                        <p class="property-area">120 m²</p>
+                        <a href="/pages/arrendatario/propiedad-detalle.html?id=1" class="view-btn">Ver más</a>
+                    </div>
+                </div>
+
+                <!-- Propiedad 2 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="/img/propiedades/Logo_SanIsidro2.png" alt="San Isidro">
+                        <div class="property-label">Propiedad 2</div>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-name">San Isidro</h3>
+                        <p class="property-price">S/. 2900 <span>/mes</span></p>
+                        <p class="property-area">85 m²</p>
+                        <a href="/pages/arrendatario/propiedad-detalle.html?id=2" class="view-btn">Ver más</a>
+                    </div>
+                </div>
+
+                <!-- Propiedad 3 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="/img/propiedades/Logo_JesusMaria.png" alt="Jesús María">
+                        <div class="property-label">Propiedad 3</div>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-name">Jesús María</h3>
+                        <p class="property-price">S/. 3200 <span>/mes</span></p>
+                        <p class="property-area">95 m²</p>
+                        <a href="/pages/arrendatario/propiedad-detalle.html?id=3" class="view-btn">Ver más</a>
+                    </div>
+                </div>
+
+                <!-- Propiedad 4 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="/img/propiedades/Logo_smp.png" alt="San Martín de Porres">
+                        <div class="property-label">Propiedad 4</div>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-name">San Martín de Porres</h3>
+                        <p class="property-price">S/. 2500 <span>/mes</span></p>
+                        <p class="property-area">75 m²</p>
+                        <a href="/pages/arrendatario/propiedad-detalle.html?id=4" class="view-btn">Ver más</a>
+                    </div>
+                </div>
+
+                <!-- Propiedad 5 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="/img/propiedades/Logo_Sanisidro.png" alt="San Isidro 2">
+                        <div class="property-label">Propiedad 5</div>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-name">San Isidro Centro</h3>
+                        <p class="property-price">S/. 3800 <span>/mes</span></p>
+                        <p class="property-area">110 m²</p>
+                        <a href="/pages/arrendatario/propiedad-detalle.html?id=5" class="view-btn">Ver más</a>
+                    </div>
+                </div>
+
+                <!-- Propiedad 6 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="/img/propiedades/propiedad6.PNG" alt="Miraflores">
+                        <div class="property-label">Propiedad 6</div>
+                    </div>
+                    <div class="property-info">
+                        <h3 class="property-name">Miraflores</h3>
+                        <p class="property-price">S/. 5200 <span>/mes</span></p>
+                        <p class="property-area">140 m²</p>
+                        <a href="/pages/arrendatario/propiedad-detalle.html?id=6" class="view-btn">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

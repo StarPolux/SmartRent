@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Ubicación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendatario</span>
+            <a href="/pages/arrendatario/inicio.html" class="nav-btn">Inicio</a>
+            <a href="/pages/arrendatario/notificaciones.html" class="nav-btn">Notificaciones</a>
+            <a href="/pages/arrendatario/cuenta.html" class="nav-btn">Cuenta</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="map-container">
+            <!-- Header -->
+            <div class="map-header">
+                <h1>Los Olivos, Lima, Perú</h1>
+            </div>
+
+            <!-- Mapa (Imagen) -->
+            <div class="map-wrapper">
+                <img src="/img/mapas/mapa_prop1.png" alt="Mapa de Los Olivos" class="map-image" id="map-image">
+                
+                <!-- Controles de zoom -->
+                <div class="map-controls">
+                    <button class="control-btn" id="zoom-in">
+                        <span>+</span>
+                    </button>
+                    <button class="control-btn" id="zoom-out">
+                        <span>−</span>
+                    </button>
+                    <button class="control-btn" id="fullscreen">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botón Regresar -->
+            <div class="map-footer">
+                <button class="btn-primary" id="back-btn">Regresar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

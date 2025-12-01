@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Reseñas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendatario</span>
+            <a href="/pages/arrendatario/inicio.html" class="nav-btn">Inicio</a>
+            <a href="/pages/arrendatario/notificaciones.html" class="nav-btn">Notificaciones</a>
+            <a href="/pages/arrendatario/cuenta.html" class="nav-btn">Cuenta</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="reviews-container">
+            <!-- Header -->
+            <div class="reviews-header">
+                <div>
+                    <h1 class="rating-title">⭐ 4.5 estrellas</h1>
+                    <p class="total-reviews">Total: <span id="total-reviews">85</span> reseñas</p>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div>
+                        <label for="sort-select">Ordenar por:</label>
+                        <select id="sort-select" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+                            <option value="recent">Más recientes</option>
+                            <option value="rating-high">Calificación: Alta a Baja</option>
+                            <option value="rating-low">Calificación: Baja a Alta</option>
+                        </select>
+                    </div>
+                    
+                    <div class="close-btn">
+                        <img src="/img/iconos/Logo_Salir.png" alt="Cerrar">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de reseñas -->
+            <div class="reviews-list" id="reviews-list">
+                
+                <div class="review-item" data-rating="5">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h3 class="reviewer-name">Felipe Santos: <span class="reviewer-location">Lima, Perú</span></h3>
+                            <p class="review-text">Lugar muy cómodo, arrendador amable y comprensible. Recomiendo totalmente esta propiedad.</p>
+                        </div>
+                        <div class="review-rating">⭐ 5 estrellas</div>
+                    </div>
+                </div>
+
+                <div class="review-item" data-rating="4.5">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h3 class="reviewer-name">María Fernandez: <span class="reviewer-location">Ayacucho, Perú</span></h3>
+                            <p class="review-text">Me encantó este lugar, todos los servicios incluidos y muy buena ubicación.</p>
+                        </div>
+                        <div class="review-rating">⭐ 4.5 estrellas</div>
+                    </div>
+                </div>
+
+                <div class="review-item" data-rating="3.5">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h3 class="reviewer-name">Carlos García: <span class="reviewer-location">Arequipa, Perú</span></h3>
+                            <p class="review-text">Buena propiedad en general, aunque el mantenimiento podría mejorar.</p>
+                        </div>
+                        <div class="review-rating">⭐ 3.5 estrellas</div>
+                    </div>
+                </div>
+
+                <div class="review-item" data-rating="5">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h3 class="reviewer-name">Ana López: <span class="reviewer-location">Cusco, Perú</span></h3>
+                            <p class="review-text">Excelente experiencia, el propietario muy atento y la zona es muy segura.</p>
+                        </div>
+                        <div class="review-rating">⭐ 5 estrellas</div>
+                    </div>
+                </div>
+
+                <div class="review-item" data-rating="4">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h3 class="reviewer-name">Roberto Mendoza: <span class="reviewer-location">Trujillo, Perú</span></h3>
+                            <p class="review-text">Muy buena opción para familias, amplio y bien ubicado cerca de colegios.</p>
+                        </div>
+                        <div class="review-rating">⭐ 4 estrellas</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-20">
+                <button class="btn-primary" id="back-btn">Regresar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

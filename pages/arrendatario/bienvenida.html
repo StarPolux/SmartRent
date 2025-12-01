@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRent - Bienvenido Arrendatario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <style>
+        .welcome-hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+            padding: 40px 0;
+        }
+        .welcome-content {
+            flex: 1;
+        }
+        .welcome-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        .welcome-subtitle {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .features-grid {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .feature-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: #6B8CFF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature-icon img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .feature-item {
+            font-size: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .welcome-profile {
+            text-align: center;
+        }
+        .welcome-profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            border: 4px solid #6B8CFF;
+        }
+        .welcome-profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .welcome-profile-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="/index.html">
+                    <img src="/img/logo_smartrent.jpg" alt="SmartRent">
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <span class="nav-btn" style="color: #6B8CFF; font-weight: 600;">Arrendatario</span>
+            <a href="/pages/arrendatario/inicio.html" class="nav-btn">Inicio</a>
+            <a href="/pages/arrendatario/notificaciones.html" class="nav-btn">Notificaciones</a>
+            <a href="/pages/arrendatario/cuenta.html" class="nav-btn">Cuenta</a>
+            <button class="nav-btn logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="blue-bar"></div>
+
+    <div class="container">
+        <div class="welcome-hero">
+            <div class="welcome-content">
+                <h1 class="welcome-title">¡Bienvenido Arrendatario!</h1>
+                <p class="welcome-subtitle">
+                    Encuentra y administra tu hogar ideal con facilidad gracias a nuestras herramientas diseñadas especialmente para ti.
+                </p>
+
+                <div class="features-grid">
+                    <div class="feature-icons">
+                        <div class="feature-icon">
+                            <img src="/img/iconos/Logo_Verificar.png" alt="Verificar">
+                        </div>
+                        <div class="feature-icon">
+                            <img src="/img/iconos/Logo_3D.png" alt="3D">
+                        </div>
+                        <div class="feature-icon">
+                            <img src="/img/iconos/Logo_Reporte.png" alt="Reportes">
+                        </div>
+                        <div class="feature-icon">
+                            <img src="/img/iconos/Logo_Contratos.png" alt="Contratos">
+                        </div>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">Verificar legitimidad del inmueble y del arrendador</div>
+                        <div class="feature-item">Visualizar riesgos estructurales y de zona en 3D</div>
+                        <div class="feature-item">Recibir reportes de riesgo automatizados</div>
+                        <div class="feature-item">Acceder a información transparente y contratos digitales claros</div>
+                    </div>
+                </div>
+
+                <a href="/pages/arrendatario/inicio.html" class="btn-primary">¡Comienza ya!</a>
+            </div>
+
+            <div class="welcome-profile">
+                <div class="welcome-profile-image">
+                    <img src="/img/usuarios/logo_usuario.png" alt="Pedro Ramirez">
+                </div>
+                <p class="welcome-profile-name">Pedro Ramirez</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
