@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartRent - Subir Foto</title>
+    <link rel="icon" type="image/png" href="../../img/logo_head.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/dashboard.css">
+    
 </head>
 <body>
     <header class="header">
@@ -26,22 +28,15 @@
 
     <div class="container flex-center" style="min-height: 60vh;">
         <div class="upload-container">
-            <!-- Título -->
             <h1 class="upload-title">Seleccione la foto desde su navegador...</h1>
-
-            <!-- Botón Explorar -->
             <button class="btn-primary" id="explore-btn">Explorar</button>
             <input type="file" id="file-input" accept="image/*" style="display: none;">
-
-            <!-- Área de preview -->
             <div class="preview-area" id="preview-area">
                 <div class="preview-placeholder" id="preview-placeholder">
                     <img src="../../img/iconos/logo_imagen.png" alt="Seleccionar imagen" style="width: 60px; opacity: 0.5;">
                 </div>
                 <img id="preview-image" class="preview-image" style="display: none;" alt="Preview">
             </div>
-
-            <!-- Botones de acción -->
             <div class="action-buttons" style="justify-content: center;">
                 <button class="btn-primary" id="save-btn">Guardar</button>
                 <button class="btn-secondary" id="cancel-btn">Cancelar</button>
